@@ -1,0 +1,214 @@
+/* ==========================================================================
+   QUINTIX STUDIO — INQUIRY FORM
+   ========================================================================== */
+
+.inquiry {
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(242, 240, 236, 0.035), rgba(242, 240, 236, 0) 40%),
+    var(--bg-soft);
+  padding: clamp(1.6rem, 3.5vw, 3rem);
+}
+
+.inquiry__head {
+  margin-bottom: 1.8rem;
+}
+
+.inquiry__title {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+  letter-spacing: -0.01em;
+}
+
+.inquiry__subtitle {
+  margin-top: 0.5rem;
+  font-size: 0.88rem;
+  color: var(--muted);
+  max-width: 52ch;
+}
+
+.inquiry__form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.4rem 1.5rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.field--full {
+  grid-column: 1 / -1;
+}
+
+.field__label {
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+.field__label .req {
+  color: var(--silver);
+  margin-left: 3px;
+}
+
+.field__control {
+  position: relative;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 0.85rem 0.9rem;
+  background: rgba(242, 240, 236, 0.03);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 0.95rem;
+  transition: border-color 0.35s var(--ease-out), background 0.35s var(--ease-out);
+  appearance: none;
+}
+
+.field textarea {
+  min-height: 130px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.field select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%238f8f97' stroke-width='1.4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.9rem center;
+  padding-right: 2.4rem;
+}
+
+.field select option {
+  background: var(--charcoal);
+  color: var(--ink);
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #62626a;
+}
+
+.field input:hover,
+.field select:hover,
+.field textarea:hover {
+  border-color: var(--line-strong);
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--ink);
+  background: rgba(242, 240, 236, 0.05);
+}
+
+.field.has-error input,
+.field.has-error select,
+.field.has-error textarea {
+  border-color: #d98a7d;
+}
+
+.field__error {
+  font-size: 0.75rem;
+  color: #e0968a;
+  min-height: 1.05em;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.inquiry__footer {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  margin-top: 0.4rem;
+}
+
+.inquiry__hint {
+  font-size: 0.76rem;
+  color: var(--muted);
+  max-width: 40ch;
+}
+
+.inquiry__status {
+  grid-column: 1 / -1;
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--line-strong);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.inquiry__status--success {
+  border-color: rgba(210, 224, 210, 0.4);
+  background: rgba(210, 224, 210, 0.05);
+}
+
+.inquiry__status--error {
+  border-color: rgba(217, 138, 125, 0.5);
+  background: rgba(217, 138, 125, 0.06);
+}
+
+.inquiry__status strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+.spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(6, 6, 7, 0.35);
+  border-top-color: var(--bg);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+.btn .spinner {
+  border-color: rgba(6, 6, 7, 0.3);
+  border-top-color: var(--bg);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.inquiry__backend-note {
+  grid-column: 1 / -1;
+  font-size: 0.72rem;
+  color: #6d6d75;
+  border-top: 1px dashed var(--line);
+  padding-top: 0.9rem;
+  line-height: 1.6;
+}
+
+.inquiry__backend-note code {
+  color: var(--silver);
+  font-family: ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  font-size: 0.7rem;
+}
+
+@media (max-width: 620px) {
+  .inquiry__form {
+    grid-template-columns: 1fr;
+  }
+  .inquiry__footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .inquiry__footer .btn {
+    width: 100%;
+  }
+}

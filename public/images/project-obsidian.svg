@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1500" viewBox="0 0 1200 1500" role="img" aria-label="Abstract architectural composition in charcoal and silver">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#141419" />
+      <stop offset="0.55" stop-color="#0b0b0e" />
+      <stop offset="1" stop-color="#060607" />
+    </linearGradient>
+    <linearGradient id="steel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3a3a44" />
+      <stop offset="0.45" stop-color="#c9c9d4" />
+      <stop offset="0.7" stop-color="#5b5b66" />
+      <stop offset="1" stop-color="#232329" />
+    </linearGradient>
+    <linearGradient id="pillar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1b1b21" />
+      <stop offset="0.4" stop-color="#4d4d59" />
+      <stop offset="0.62" stop-color="#8f8f9d" />
+      <stop offset="1" stop-color="#16161b" />
+    </linearGradient>
+    <radialGradient id="halo" cx="0.5" cy="0.36" r="0.5">
+      <stop offset="0" stop-color="#e9e9f2" stop-opacity="0.5" />
+      <stop offset="0.5" stop-color="#9a9aa8" stop-opacity="0.12" />
+      <stop offset="1" stop-color="#000" stop-opacity="0" />
+    </radialGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch" />
+      <feColorMatrix type="saturate" values="0" />
+    </filter>
+    <filter id="soft"><feGaussianBlur stdDeviation="18" /></filter>
+  </defs>
+
+  <rect width="1200" height="1500" fill="url(#sky)" />
+  <circle cx="600" cy="540" r="520" fill="url(#halo)" />
+
+  <!-- moon disc -->
+  <circle cx="600" cy="500" r="150" fill="#dcdce6" opacity="0.1" />
+  <circle cx="600" cy="500" r="150" fill="none" stroke="#e8e8f2" stroke-opacity="0.35" stroke-width="1.5" />
+
+  <!-- architectural arches -->
+  <g opacity="0.92">
+    <path d="M300 1500 V840 a300 300 0 0 1 600 0 V1500 Z" fill="#0d0d11" />
+    <path d="M300 1500 V840 a300 300 0 0 1 600 0 V1500 Z" fill="none" stroke="url(#steel)" stroke-width="3" opacity="0.75" />
+    <path d="M420 1500 V880 a180 180 0 0 1 360 0 V1500 Z" fill="#08080a" />
+    <path d="M420 1500 V880 a180 180 0 0 1 360 0 V1500 Z" fill="none" stroke="url(#steel)" stroke-width="2" opacity="0.6" />
+  </g>
+
+  <!-- pillars -->
+  <g>
+    <rect x="150" y="620" width="58" height="880" fill="url(#pillar)" opacity="0.85" />
+    <rect x="992" y="700" width="46" height="800" fill="url(#pillar)" opacity="0.7" />
+    <rect x="80" y="980" width="30" height="520" fill="url(#pillar)" opacity="0.4" />
+  </g>
+
+  <!-- water reflection -->
+  <g opacity="0.28" filter="url(#soft)">
+    <rect x="0" y="1360" width="1200" height="140" fill="#8f8f9d" />
+  </g>
+  <g stroke="#c9c9d4" stroke-opacity="0.22" stroke-width="2">
+    <line x1="120" y1="1400" x2="1080" y2="1400" />
+    <line x1="220" y1="1440" x2="980" y2="1440" />
+    <line x1="330" y1="1476" x2="870" y2="1476" />
+  </g>
+
+  <rect width="1200" height="1500" filter="url(#grain)" opacity="0.07" />
+</svg>
